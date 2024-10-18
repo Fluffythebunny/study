@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZechWare</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#prxy">Prxy</a></li>
+                <li><a href="#emu">Emu</a></li>
+                <li><a href="#credits">Credits</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="home" class="active">
+                <h1>Welcome to ZechWare</h1>
+                <p>Explore our amazing features and enjoy the smooth animations!</p>
+            </section>
+            <section id="games">
+                <h2>Games</h2>
+                <div class="iframe-container">
+                    <iframe id="lessonsFrame" src="https://d1bwjna9ez7tg7.cloudfront.net/pages/lessons.html"></iframe>
+                    <script> document.addEventListener('DOMContentLoaded', function() {
+                        var iframe = document.getElementById('lessonsFrame');
+                        
+                        iframe.addEventListener('load', function() {
+                            try {
+                                var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                                var style = iframeDoc.createElement('style');
+                                style.textContent = `
+                                    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+                    
+                                    body {
+                                        font-family: 'Poppins', sans-serif !important;
+                                        background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2) !important;
+                                        background-size: 400% 400% !important;
+                                        animation: gradientBG 15s ease infinite !important;
+                                    }
+                    
+                                    @keyframes gradientBG {
+                                        0% { background-position: 0% 50%; }
+                                        50% { background-position: 100% 50%; }
+                                        100% { background-position: 0% 50%; }
+                                    }
+                    
+                                    .container, .main-content, .sidebar {
+                                        background: rgba(255, 255, 255, 0.1) !important;
+                                        backdrop-filter: blur(10px) !important;
+                                        border-radius: 20px !important;
+                                        padding: 2rem !important;
+                                        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+                                    }
+                    
+                                    .btn, button, input[type="submit"] {
+                                        background: rgba(53, 51, 204, 0.7) !important;
+                                        color: white !important;
+                                        border: none !important;
+                                        border-radius: 20px !important;
+                                        padding: 10px 20px !important;
+                                        cursor: pointer !important;
+                                        transition: background-color 0.3s ease !important;
+                                    }
+                    
+                                    .btn:hover, button:hover, input[type="submit"]:hover {
+                                        background-color: rgba(53, 51, 204, 0.9) !important;
+                                    }
+                    
+                                    input[type="text"], input[type="email"], input[type="password"], textarea {
+                                        background: rgba(255, 255, 255, 0.2) !important;
+                                        border: none !important;
+                                        border-radius: 20px !important;
+                                        padding: 10px !important;
+                                        color: #fff !important;
+                                    }
+                                `;
+                                iframeDoc.head.appendChild(style);
+                            } catch (e) {
+                                console.error('Failed to inject CSS into iframe:', e);
+                            }
+                        });
+                    });
+                    </script>
+                </div>
+            </section>
+            <section id="prxy">
+                <h2>Prxy</h2>
+                <div class="iframe-container">
+                    <iframe src="https://d1bwjna9ez7tg7.cloudfront.net/prxy/" frameborder="0"></iframe>
+                </div>
+            </section>
+            <section id="emu">
+                <h2>Emulator</h2>
+                <div class="iframe-container">
+                    <iframe src="https://d1bwjna9ez7tg7.cloudfront.net/emujs/" frameborder="0"></iframe>
+                </div>
+            </section>
+            <section id="credits">
+                <h2>Credits</h2>
+                <p>Created by Zech Aka Pugls using HTML, CSS, and JavaScript!</p>
+                <p>EmulatorJs Made by the EmulatorJS team</p>
+                <p>Ultraviolet by TitaniumNetwork</p>
+                <p>Colbster937 for hosting most the serverside stuff like the proxy aka Ultraviolet and also hosting emulator js and the games</p>
+                <p>all ui was made by me Zech and all serverside stuff was made by Colbster937</p>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
